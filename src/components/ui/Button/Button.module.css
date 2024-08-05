@@ -17,3 +17,7 @@
   width: 32px;
   height: 32px;
 }
+.Button.yellow {
+  background-color: yellow;
+  color: green;
+}
