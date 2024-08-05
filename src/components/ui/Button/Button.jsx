@@ -1,10 +1,10 @@
 import React from "react";
 
-import './Button.css'
+import style from './Button.module.css'
 
 const Button = () => {
   return (
-      <div className="Button" data-testid="Button">Benjamin</div>
+      <div className={style.Button} data-testid="Button">Benjamin</div>
   );
 };
 export default Button;
