@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <Button >Valider</Button>
       <Button >Annuler</Button>
-      <Button bgcolor="skyblue" color="yellow" ><img src="/cross.png"/>Cancel</Button>
+      <Button style={{textDecoration:'underline'}} bgcolor="skyblue" color="yellow" ><img src="/cross.png"/>Cancel</Button>
     </div>
   );
 }
