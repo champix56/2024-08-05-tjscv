@@ -26,6 +26,6 @@ Button.propTypes = {
   }),
 };
 Button.defaultProps = {
-  bgcolor: "yellow",
+  bgcolor: "yellow"
 };
 export default Button;
