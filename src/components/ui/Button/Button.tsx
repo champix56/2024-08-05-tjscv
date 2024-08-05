@@ -1,7 +1,18 @@
 import React from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
-const Button = (props) => {
+
+interface IButtonProps {
+  bgcolor?: string;
+  color?: "black" | "white";
+  style?: {
+    textDecoration?: "underline" | "none";
+    fontWeight?: 100 | 500 | 900;
+  };
+  children:React.ReactElement|string|Array<React.ReactElement|string>
+}
+
+const Button: React.FC<IButtonProps> = (props) => {
   console.log(props);
   return (
     <div
@@ -17,15 +28,12 @@ const Button = (props) => {
     </div>
   );
 };
+
 Button.propTypes = {
   bgcolor: PropTypes.string,
-  color: PropTypes.oneOf(["white", "black"]).isRequired,
-  style: PropTypes.exact({
-    textDecoration: PropTypes.oneOf(["underline", "none"]),
-    fontWeight: PropTypes.oneOf([100, 500, 900]),
-  }),
+  color: PropTypes.oneOf(["white", "black"]),
 };
 Button.defaultProps = {
-  bgcolor: "yellow"
+  bgcolor: "yellow",
 };
 export default Button;
