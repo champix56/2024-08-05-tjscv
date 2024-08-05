@@ -6,7 +6,7 @@ const Button = (props) => {
   console.log(props);
   return (
     <div className={style.Button} data-testid="Button">
-      {props.text}
+      {props.children}
     </div>
   );
 };

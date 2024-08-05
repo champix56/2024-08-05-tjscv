@@ -1,15 +1,19 @@
-.Button{
-    border:none;
-    border-radius: 7px;
-    padding : 5px 10px;
-    margin: 0 25px 25px 0;
-    box-shadow: 25px 25px 25px grey;
-    
-    font-size: 23pt;
-    font-weight: 900;
+.Button {
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  margin: 0 25px 25px 0;
+  box-shadow: 25px 25px 25px grey;
 
-    display: inline;
+  font-size: 23pt;
+  font-weight: 900;
 
-    color:white;
-    background-color: tomato;
+  display: inline;
+
+  color: white;
+  background-color: tomato;
+}
+.Button img {
+  width: 32px;
+  height: 32px;
 }

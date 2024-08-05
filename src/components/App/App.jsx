@@ -3,11 +3,9 @@ import Button from "../ui/Button/Button.jsx";
 function App() {
   return (
     <div className="App">
-      <Button text="Valider"/>
-      <Button text="Annul" />
-      <Button />
-      <Button />
-      <Button />
+      <Button >Valider</Button>
+      <Button >Annuler</Button>
+      <Button ><img src="/cross.png"/>Cancel</Button>
     </div>
   );
 }
