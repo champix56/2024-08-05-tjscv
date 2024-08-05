@@ -1,11 +1,10 @@
 import React from "react";
-
 import style from "./Button.module.css";
 
 const Button = (props) => {
   console.log(props);
   return (
-    <div className={style.Button} data-testid="Button">
+    <div style={{backgroundColor:props.bgcolor, color:props.color}} className={style.Button} data-testid="Button">
       {props.children}
     </div>
   );

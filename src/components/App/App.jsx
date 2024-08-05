@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <Button >Valider</Button>
       <Button >Annuler</Button>
-      <Button ><img src="/cross.png"/>Cancel</Button>
+      <Button bgcolor="skyblue" color="yellow" ><img src="/cross.png"/>Cancel</Button>
     </div>
   );
 }
