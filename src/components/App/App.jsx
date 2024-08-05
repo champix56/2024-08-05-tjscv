@@ -15,7 +15,6 @@ function App() {
         style={{
           textDecoration: "underline",
           fontWeight: 500,
-          fontSize: "25pt",
         }}
       >
         <img src="/cross.png" />
