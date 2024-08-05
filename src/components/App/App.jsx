@@ -3,8 +3,8 @@ import Button from "../ui/Button/Button.jsx";
 function App() {
   return (
     <div className="App">
-      <Button />
-      <Button />
+      <Button text="Valider"/>
+      <Button text="Annul" />
       <Button />
       <Button />
       <Button />
