@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import '../../../../node_modules/bootstrap/dist/css/bootstrap.css'
-import '../../../../node_modules/bootstrap/dist/js/bootstrap.js'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
 const NavBar = () => {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
