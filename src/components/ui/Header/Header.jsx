@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Header.module.css";
 
-const Header = (props) => {
+const Header = () => {
   return (
     <div className={styles.Header} data-testid="Header">
       <span className={styles.meme}>Meme</span>.
@@ -11,8 +11,5 @@ const Header = (props) => {
   );
 };
 
-Header.propTypes = {};
-
-Header.defaultProps = {};
 
 export default Header;
