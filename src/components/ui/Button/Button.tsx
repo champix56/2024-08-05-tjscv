@@ -10,49 +10,52 @@ interface IButtonProps {
     fontWeight?: 100 | 500 | 900;
   };
   children: React.ReactElement | string | Array<React.ReactElement | string>;
+  type?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<IButtonProps> = (props) => {
-  const [isClicked, setIsClicked] = useState(-1);
+  const [isClicked, setIsClicked] = useState(true);
 
   useEffect(() => {
     console.log("dans l'effet", isClicked);
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 300);
   }, [isClicked]);
   useEffect(() => {
     //component pure mount
-    setIsClicked(0);
+    setIsClicked(false);
     return () => {
       //unmount
     };
   }, []);
 
   return (
-    <>
-      <div>isclicked:{isClicked.toString()}</div>
-      <div
-        style={{
-          ...props.style,
-          backgroundColor: props.bgcolor,
-          color: props.color,
-        }}
-        className={style.Button}
-        data-testid="Button"
-        onClick={(evt) => {
-          setIsClicked(isClicked + 1);
-          console.log("isclicked", isClicked, evt);
-        }}
-      >
-        {props.children}
-      </div>
-    </>
+    <button
+      style={{
+        ...props.style,
+        backgroundColor: props.bgcolor,
+        color: props.color,
+      }}
+      type={props.type}
+      className={`${style.Button}${isClicked ? " " + style.clicked : ""}`}
+      data-testid="Button"
+      onClick={(evt) => {
+        setIsClicked(true);
+      }}
+    >
+      {props.children}
+    </button>
   );
 };
 
 Button.propTypes = {
   bgcolor: PropTypes.string,
   color: PropTypes.oneOf(["white", "black"]),
+  type: PropTypes.oneOf(["button","submit","reset"]),
 };
 Button.defaultProps = {
   bgcolor: "yellow",
+  type:'button'
 };
 export default Button;
