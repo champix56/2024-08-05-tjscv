@@ -8,10 +8,16 @@
   font-size: 23pt;
   font-weight: 900;
 
-  display: inline;
-
   color: white;
   background-color: tomato;
+}
+.Button:hover{
+  box-shadow: 15px 15px 25px grey;
+}
+.Button.clicked{
+  box-shadow: 5px 5px 25px grey ;
+  border: 1px solid grey ;
+  /* text-decoration: underline black; */
 }
 .Button img {
   width: 32px;
