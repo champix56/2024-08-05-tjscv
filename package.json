@@ -9,6 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "genlayout": "npx generate-react-cli c --type=layout",
+    "genui": "npx generate-react-cli c --type=ui",
     "genhook": "npx generate-react-cli c --type=hook"
     
   },
