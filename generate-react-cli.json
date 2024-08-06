@@ -29,7 +29,7 @@
       "withStory": true,
       "withLazy": true,
       "customTemplates":{
-        "components":"grc_templates/layout/TemplateName.jsx",
+        "component":"grc_templates/layout/TemplateName.jsx",
         "story":"grc_templates/layout/readme.md"
       }
     }
