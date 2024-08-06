@@ -5,17 +5,13 @@ import styles from "./Footer.module.css";
 const Footer = (props) => {
   return (
     <div className={styles.Footer} data-testid="Footer">
-      {props.children}
+      Footer Component
     </div>
   );
 };
 
-Footer.propTypes = {
-  children: PropTypes.any.isRequired,
-};
+Footer.propTypes = {};
 
-Footer.defaultProps = {
-  children: 'Footer component'
-};
+Footer.defaultProps = {};
 
 export default Footer;

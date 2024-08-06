@@ -5,17 +5,13 @@ import styles from "./Header.module.css";
 const Header = (props) => {
   return (
     <div className={styles.Header} data-testid="Header">
-      {props.children}
+      Header Component
     </div>
   );
 };
 
-Header.propTypes = {
-  children: PropTypes.any.isRequired,
-};
+Header.propTypes = {};
 
-Header.defaultProps = {
-  children: 'Header component'
-};
+Header.defaultProps = {};
 
 export default Header;

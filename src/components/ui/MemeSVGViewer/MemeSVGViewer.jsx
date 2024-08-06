@@ -1,21 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./MemeSvgViewer.module.css";
+import styles from "./MemeSVGViewer.module.css";
 
-const MemeSvgViewer = (props) => {
+const MemeSVGViewer = (props) => {
   return (
-    <div className={styles.MemeSvgViewer} data-testid="MemeSvgViewer">
-      {props.children}
+    <div className={styles.MemeSVGViewer} data-testid="MemeSvgViewer">
+      MemeSvgViewer Component
     </div>
   );
 };
 
-MemeSvgViewer.propTypes = {
-  children: PropTypes.any.isRequired,
-};
+MemeSVGViewer.propTypes = {};
 
-MemeSvgViewer.defaultProps = {
-  children: 'MemeSvgViewer component'
-};
+MemeSVGViewer.defaultProps = {};
 
-export default MemeSvgViewer;
+export default MemeSVGViewer;

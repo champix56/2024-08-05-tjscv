@@ -5,17 +5,13 @@ import styles from "./NavBar.module.css";
 const NavBar = (props) => {
   return (
     <div className={styles.NavBar} data-testid="NavBar">
-      {props.children}
+      NavBar Component
     </div>
   );
 };
 
-NavBar.propTypes = {
-  children: PropTypes.any.isRequired,
-};
+NavBar.propTypes = {};
 
-NavBar.defaultProps = {
-  children: 'NavBar component'
-};
+NavBar.defaultProps = {};
 
 export default NavBar;
