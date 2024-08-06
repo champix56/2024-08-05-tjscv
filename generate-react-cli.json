@@ -11,6 +11,27 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true
+    },
+    "hook":{
+      "path": "src/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "components":"grc_templates/hookedFunction/TemplateName.jsx"
+      }
+    },
+    "layout":{
+      "path": "src/components/layout",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "components":"grc_templates/layout/TemplateName.jsx",
+        "story":"grc_templates/layout/readme.md"
+      }
     }
   }
 }
