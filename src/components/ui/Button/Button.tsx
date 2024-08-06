@@ -11,6 +11,7 @@ interface IButtonProps {
   };
   children: React.ReactElement | string | Array<React.ReactElement | string>;
   type?: "button" | "submit" | "reset";
+  onButtonClick?: Function;
 }
 
 const Button: React.FC<IButtonProps> = (props) => {
@@ -42,6 +43,9 @@ const Button: React.FC<IButtonProps> = (props) => {
       data-testid="Button"
       onClick={(evt) => {
         setIsClicked(true);
+        if (undefined != props.onButtonClick) {
+          props.onButtonClick("coucou");
+        }
       }}
     >
       {props.children}
@@ -52,10 +56,11 @@ const Button: React.FC<IButtonProps> = (props) => {
 Button.propTypes = {
   bgcolor: PropTypes.string,
   color: PropTypes.oneOf(["white", "black"]),
-  type: PropTypes.oneOf(["button","submit","reset"]),
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
+  onButtonClick: PropTypes.func,
 };
 Button.defaultProps = {
   bgcolor: "yellow",
-  type:'button'
+  type: "button",
 };
 export default Button;
