@@ -24,10 +24,10 @@ const App = (props) => {
         <Header />
         <NavBar />
         <FlexWFirstGrow>
-          <MemeSVGViewer image={undefined} meme={meme} basePath="" />
-          <MemeForm />
+          <MemeSVGViewer image={images.find((item)=>item.id===meme.imageId)} meme={meme} basePath="" />
+          <MemeForm images={images} />
         </FlexWFirstGrow>
-        <div>{JSON.stringify(images)}</div>
+        <div>{JSON.stringify(images).substring(1,10)}</div>
         <Footer />
       </FlexHThirdGrow>
     </div>
