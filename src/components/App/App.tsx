@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, FC } from "react";
 import Button from "../ui/Button/Button";
 
 const App: React.FC = () => {
