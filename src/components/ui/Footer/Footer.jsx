@@ -2,16 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Footer.module.css";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <div className={styles.Footer} data-testid="Footer">
-      Footer Component
+      Copyright &copy; 2024 DESORBAIX
     </div>
   );
 };
 
-Footer.propTypes = {};
-
-Footer.defaultProps = {};
 
 export default Footer;
