@@ -18,7 +18,7 @@ const Button: React.FC<IButtonProps> = (props) => {
   const [isClicked, setIsClicked] = useState(true);
 
   useEffect(() => {
-    console.log("dans l'effet", isClicked);
+   // console.log("dans l'effet", isClicked);
     setTimeout(() => {
       setIsClicked(false);
     }, 300);
