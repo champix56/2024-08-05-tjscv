@@ -19,7 +19,7 @@
       "withStory": true,
       "withLazy": true,
       "customTemplates":{
-        "components":"grc_templates/hookedFunction/TemplateName.jsx"
+        "component":"grc_templates/hookedFunction/TemplateName.jsx"
       }
     },
     "layout":{
