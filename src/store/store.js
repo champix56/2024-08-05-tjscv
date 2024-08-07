@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import ressourcesReducer, { addImage, addImages } from "./ressources";
+import ressourcesReducer, { addImage, addImages, loadImagesFromRest } from "./ressources";
 import { images } from "../../db/db.json";
 import currentReducer from "./current";
 
@@ -12,4 +12,4 @@ export const store = configureStore({
 store.subscribe(() => {
   console.log(store.getState());
 });
-store.dispatch(addImages(images));
+store.dispatch(loadRessourcesFromRest());
