@@ -6,8 +6,18 @@
   overflow-y:scroll ;
   padding-top:10px
 }
-.MemeThumbnail>div{
-    height :300px;
-    width:300px;
+.MemeThumbnail>*{
+    height :350px;
+    width:350px;
     margin-bottom: 20px;
+    display: block;
+}
+.MemeThumbnail>*>div{
+    height :100%;
+    width:100%;
+    text-align: center;
+    border:1px solid #AEAEAE}
+.MemeThumbnail svg{
+    height: 100%;
+    width: 100%;
 }
