@@ -18,6 +18,6 @@
     text-align: center;
     border:1px solid #AEAEAE}
 .MemeThumbnail svg{
-    height: 100%;
+    height: calc(100% - 30px);
     width: 100%;
 }

@@ -18,6 +18,7 @@ const App = (props) => {
         <div><Link to={'/'}>Home</Link> | <Link to={"/new"}>New</Link> | <Link to={"/thumbnail"}>Thumbnail</Link></div>
         <Routes>
           <Route path="/new" element={<MemeEditor />} />
+          <Route path="/editor/:id" element={<MemeEditor />} />
           <Route path="/" element={<Home />} />
           <Route path="/thumbnail" element={<MemeThumbnail />} />
         </Routes>
