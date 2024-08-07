@@ -1,20 +1,18 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import UNCONNECTEDMemeForm from './MemeForm'
+import React from "react";
+import UNCONNECTEDMemeForm from "./MemeForm";
+import { useDispatch, useSelector } from "react-redux";
+const MemeForm = (props) => {
+  const images = useSelector((storeState) => {
+    return storeState.ressources.images;
+  });
+//   const dispatch = useDispatch();
+  return (
+    <UNCONNECTEDMemeForm
+      {...props}
+      images={images}
+    //   onMemeChange={(meme) => dispatch(changeMeme(meme))}
+    />
+  );
+};
 
-const mapStateToProps = (storeState, parentProps ) =>{
-    return {
-            ...props,
-            images: storeState.ressources.images
-    }
-}
-
-const mapDispatchToProps=(dispatch) => {
-    return {
-      /*  onMemeChange:(meme)=>{
-                dispatch(changeMeme(meme))
-        }*/
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UNCONNECTEDMemeForm)
+export default MemeForm;
