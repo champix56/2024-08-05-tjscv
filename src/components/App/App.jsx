@@ -4,10 +4,11 @@ import FlexHThirdGrow from "../layout/FlexHThirdGrow/FlexHThirdGrow";
 import Header from "../ui/Header/Header";
 import NavBar from "../ui/NavBar/NavBar";
 
-import MemeForm from "../functionnal/MemeForm/MemeForm";
+import MemeForm from "../functionnal/MemeForm/MemeForm.connected";
 import Footer from "../ui/Footer/Footer";
 import { MemeSVGViewer, emptyMeme } from "orsys-tjs-meme";
 
+import {store} from '../../store/store'
 const App = (props) => {
   const [meme, setMeme] = useState({...emptyMeme, text:"React c'est super"});
   const [images, setImages] = useState([]);
@@ -25,7 +26,7 @@ const App = (props) => {
         <NavBar />
         <FlexWFirstGrow>
           <MemeSVGViewer image={images.find((item)=>item.id===meme.imageId)} meme={meme} basePath="" />
-          <MemeForm images={images} meme={meme} onMemeChange={newMeme=>{
+          <MemeForm meme={meme} onMemeChange={newMeme=>{
             setMeme(newMeme);
           }}  />
         </FlexWFirstGrow>
