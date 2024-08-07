@@ -6,9 +6,10 @@ import NavBar from "../ui/NavBar/NavBar";
 
 import MemeForm from "../functionnal/MemeForm/MemeForm.connected";
 import Footer from "../ui/Footer/Footer";
-import { MemeSVGViewer, emptyMeme } from "orsys-tjs-meme";
+import { emptyMeme } from "orsys-tjs-meme";
 
 import {store} from '../../store/store'
+import MemeSVGViewer from "../ui/MemeSVGViewer/MemeSVGViewer";
 const App = (props) => {
   const [meme, setMeme] = useState({...emptyMeme, text:"React c'est super"});
   const [images, setImages] = useState([]);
@@ -25,7 +26,7 @@ const App = (props) => {
         <Header />
         <NavBar />
         <FlexWFirstGrow>
-          <MemeSVGViewer image={images.find((item)=>item.id===meme.imageId)} meme={meme} basePath="" />
+          <MemeSVGViewer basePath="" />
           <MemeForm />
         </FlexWFirstGrow>
         <div>{JSON.stringify(images).substring(1,10)}</div>
