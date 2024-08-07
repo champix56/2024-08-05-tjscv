@@ -5,7 +5,7 @@ import NavBar from "../ui/NavBar/NavBar";
 import Footer from "../ui/Footer/Footer";
 import { Link, Route, Routes } from "react-router-dom";
 import MemeEditor from "../../pages/MemeEditor";
-import MemeThumbnail from "../../pages/MemeThumbnail/MemeThumbnail";
+import MemeThumbnail from "../../pages/MemeThumbnail/MemeThumbnail.connected";
 import Home from "../../pages/Home";
 
 const App = (props) => {
