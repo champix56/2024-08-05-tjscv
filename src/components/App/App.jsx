@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from "react";
-import FlexWFirstGrow from "../layout/FlexWFirstGrow/FlexWFirstGrow";
+import React from "react";
 import FlexHThirdGrow from "../layout/FlexHThirdGrow/FlexHThirdGrow";
 import Header from "../ui/Header/Header";
 import NavBar from "../ui/NavBar/NavBar";
-
-import MemeForm from "../functionnal/MemeForm/MemeForm.connected";
 import Footer from "../ui/Footer/Footer";
+import { Link, Route, Routes } from "react-router-dom";
+import MemeEditor from "../../pages/MemeEditor";
+import MemeThumbnail from "../../pages/MemeThumbnail/MemeThumbnail";
+import Home from "../../pages/Home";
 
-import MemeSVGViewer from "../ui/MemeSVGViewer/MemeSVGViewer";
 const App = (props) => {
   return (
     <div className="App">
       <FlexHThirdGrow>
         <Header />
-        <NavBar />
-        <FlexWFirstGrow>
-          <MemeSVGViewer basePath="" />
-          <MemeForm />
-        </FlexWFirstGrow>
+
+        {/* <NavBar /> */}
+        <div><Link to={'/'}>Home</Link> | <Link to={"/new"}>New</Link> | <Link to={"/thumbnail"}>Thumbnail</Link></div>
+        <Routes>
+          <Route path="/new" element={<MemeEditor />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/thumbnail" element={<MemeThumbnail />} />
+        </Routes>
         <Footer />
       </FlexHThirdGrow>
     </div>
