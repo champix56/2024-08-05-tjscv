@@ -1,10 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import ressourcesReducer, { addImage, addImages } from "./ressources";
 import { images } from "../../db/db.json";
-import { reducerCurrent } from "./current";
+import currentReducer from "./current";
 
 export const store = configureStore({
-  reducer: combineReducers({ ressources: ressourcesReducer }),
+  reducer: combineReducers({
+    ressources: ressourcesReducer,
+    current: currentReducer,
+  }),
 });
 store.subscribe(() => {
   console.log(store.getState());
