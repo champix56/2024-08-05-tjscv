@@ -25,7 +25,9 @@ const App = (props) => {
         <NavBar />
         <FlexWFirstGrow>
           <MemeSVGViewer image={images.find((item)=>item.id===meme.imageId)} meme={meme} basePath="" />
-          <MemeForm images={images} meme={meme}  />
+          <MemeForm images={images} meme={meme} onMemeChange={newMeme=>{
+            setMeme(newMeme);
+          }}  />
         </FlexWFirstGrow>
         <div>{JSON.stringify(images).substring(1,10)}</div>
         <Footer />
