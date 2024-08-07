@@ -16,12 +16,20 @@ const current = createSlice({
       Object.assign(state, emptyMeme);
     },
   },
+  extraReducers(builder){
+    builder.addCase(saveCurrent.fulfilled,(state,action)=>{
+      Object.assign(state, action.payload);
+    })
+  }
 });
 export const saveCurrent = createAsyncThunk("current/save", async (meme) => {
   const pr = await fetch(
     `http://localhost:5679/memes${undefined != meme.id ? "/" + meme.id : ""}`,
     {
       method: undefined != meme.id ? "PUT" : "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
       body: JSON.stringify(meme),
     }
   );

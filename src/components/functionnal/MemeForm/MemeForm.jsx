@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import Button from "../../ui/Button/Button.tsx";
+import { useDispatch } from "react-redux";
+import { saveCurrent } from "../../../store/current.js";
 
 const initialState = {};
 const MemeForm = (props) => {
@@ -29,12 +31,14 @@ const MemeForm = (props) => {
     newM[evt.target.name] = evt.target.checked;
     props.onMemeChange(newM);
   };
+  const d= useDispatch();
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
-          // props.onMemeChange(meme);
+          //props.onMemeSave(props.meme);
+         d(saveCurrent(props.meme))
         }}
       >
         <label htmlFor="titre">
@@ -186,5 +190,6 @@ MemeForm.propTypes = {
   images: PropTypes.array.isRequired,
   meme: PropTypes.object.isRequired,
   onMemeChange: PropTypes.func.isRequired,
+  onMemeSave: PropTypes.func.isRequired,
 };
 export default MemeForm;

@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import ressourcesReducer, { addImage, addImages, loadImagesFromRest } from "./ressources";
+import ressourcesReducer, { loadRessourcesFromRest } from "./ressources";
 import { images } from "../../db/db.json";
 import currentReducer from "./current";
 

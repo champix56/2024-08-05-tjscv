@@ -17,7 +17,17 @@ const ressources = createSlice({
     // },
   },
   extraReducers(builder) {
-    builder.addCase(loadRessourcesFromRest.pending, (state, action) => {
+    builder.addCase('current/save/fulfilled',(s,a)=>{
+        const position=s.memes.findIndex(m=>m.id===a.payload.id);
+        if(position>=0){
+            //exist
+            s.memes[position]=a.payload
+        }
+        else{
+            s.memes.push(a.payload)
+        }
+    })
+    builder.addCase(loadRessourcesFromRest.pending, () => {
       console.log("chargement des images en cours");
     });
     builder.addCase(loadRessourcesFromRest.fulfilled, (state, action) => {
