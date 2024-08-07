@@ -2,18 +2,14 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import Button from "../../ui/Button/Button.tsx";
-import { store } from "../../../store/store.js";
 
 const initialState = {};
 const MemeForm = (props) => {
+  // const [state, setstate] = useState(initialState);
+  //const [text, setText] = useState(props.meme.text);
   //const [meme, setMeme] = useState(props.meme);
-  const [images, setimages] = useState([])
   useEffect(() => {
     //mount
-    setimages(store.getState().ressources.images)
-    store.subscribe(()=>{
-        setimages(store.getState().ressources.images)
-    })
     return () => {
       //unmount
     };
@@ -68,7 +64,7 @@ const MemeForm = (props) => {
           value={props.meme.imageId}
         >
           <option value="-1">No image</option>
-          {images.map((item, index) => {
+          {props.images.map((item, index) => {
             return (
               <option key={index + "img"} value={item.id}>
                 {item.name}
