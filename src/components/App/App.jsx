@@ -9,7 +9,7 @@ import Footer from "../ui/Footer/Footer";
 import { MemeSVGViewer, emptyMeme } from "orsys-tjs-meme";
 
 const App = (props) => {
-  const [meme, setMeme] = useState(emptyMeme);
+  const [meme, setMeme] = useState({...emptyMeme, text:"React c'est super"});
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const App = (props) => {
         <NavBar />
         <FlexWFirstGrow>
           <MemeSVGViewer image={images.find((item)=>item.id===meme.imageId)} meme={meme} basePath="" />
-          <MemeForm images={images} />
+          <MemeForm images={images} meme={meme}  />
         </FlexWFirstGrow>
         <div>{JSON.stringify(images).substring(1,10)}</div>
         <Footer />

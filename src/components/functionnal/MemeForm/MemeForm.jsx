@@ -5,7 +5,9 @@ import Button from "../../ui/Button/Button.tsx";
 
 const initialState = {};
 const MemeForm = (props) => {
-  const [state, setstate] = useState(initialState);
+  // const [state, setstate] = useState(initialState);
+  //const [text, setText] = useState(props.meme.text);
+  const [meme, setMeme] = useState(props.meme);
   useEffect(() => {
     //mount
     return () => {
@@ -40,7 +42,16 @@ const MemeForm = (props) => {
           <h2>texte</h2>
         </label>
         <br />
-        <input name="text" id="text" type="text" />
+        <input
+          name="text"
+          id="text"
+          type="text"
+          value={meme.text}
+          onChange={(evt) => {
+            //console.log(evt.target.value);
+            setMeme({...meme,text:evt.target.value});
+          }}
+        />
         <br />
         <label htmlFor="x">
           <h2 style={{ display: "inline" }}>x :</h2>
@@ -105,5 +116,6 @@ const MemeForm = (props) => {
 };
 MemeForm.propTypes = {
   images: PropTypes.array.isRequired,
+  meme: PropTypes.object.isRequired,
 };
 export default MemeForm;
